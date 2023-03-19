@@ -5,11 +5,17 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                script{
+                sh './gradlew build'
+                }
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
+                script {
+                sh './gradlew test'
+                }
             }
         }
         stage('Deploy') {
